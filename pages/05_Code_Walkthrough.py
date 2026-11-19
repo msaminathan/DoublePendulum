@@ -14,7 +14,7 @@ import streamlit as st
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar
+from dp_ui import param_sidebar, references
 
 st.title("Code walkthrough")
 param_sidebar()
@@ -221,3 +221,11 @@ differentiated Lagrangian, checks energy conservation, compares the analytic
 `A` with a numerical Jacobian of the nonlinear dynamics, and verifies the
 controllability rank, the LQR closed-loop poles and the closed-loop recovery.
 """)
+
+references([
+    "P. Virtanen, R. Gommers, T. E. Oliphant, et al., 'SciPy 1.0: Fundamental Algorithms for Scientific Computing in Python', *Nature Methods* 17(3), 261-272 (2020), doi:10.1038/s41592-019-0686-2 — solve_ivp and the DOP853 integrator used in dp_model.simulate.",
+    "E. Hairer, S. P. Nørsett, G. Wanner, *Solving Ordinary Differential Equations I: Nonstiff Problems*, 2nd revised ed., Springer, 1993 — the numerical method behind DOP853.",
+    "C. R. Harris, K. J. Millman, S. J. van der Walt, et al., 'Array programming with NumPy', *Nature* 585, 357-362 (2020), doi:10.1038/s41586-020-2649-2 — the array model used for the state vector.",
+    "J. D. Hunter, 'Matplotlib: A 2D Graphics Environment', *Computing in Science & Engineering* 9(3), 90-95 (2007) — the plotting backend used by dp_plot.",
+    "K. J. Åström, R. M. Murray, *Feedback Systems: An Introduction for Scientists and Engineers*, Princeton University Press, 2008 — the control formulation implemented in the LQR section.",
+])

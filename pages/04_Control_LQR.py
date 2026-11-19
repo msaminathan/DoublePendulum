@@ -12,7 +12,7 @@ import streamlit as st
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar, pole_table
+from dp_ui import param_sidebar, pole_table, references
 
 
 @st.cache_data(show_spinner=False)
@@ -284,3 +284,11 @@ The next step for a hardware implementation would be to add an integrator on
 the cart position (to remove steady-state error under friction) and to
 implement the swing-up plus balancing hand-over.
 """)
+
+references([
+    "K. J. Åström, R. M. Murray, *Feedback Systems: An Introduction for Scientists and Engineers*, Princeton University Press, 2008 — reachability, controllability and state feedback.",
+    "D. E. Kirk, *Optimal Control Theory: An Introduction*, Prentice-Hall, 1970 (Dover reprint) — the linear-quadratic regulator and the Riccati equation.",
+    "G. F. Franklin, J. D. Powell, A. Emami-Naeini, *Feedback Control of Dynamic Systems*, 7th ed., Pearson, 2015 — LQR design, pole placement and the effect of actuator saturation.",
+    "M. W. Spong, 'The Swing Up Control Problem for the Acrobot', *IEEE Control Systems Magazine* 15(1), 49-55 (1995), doi:10.1109/37.341864 — underactuated systems and partial feedback linearization for swing-up.",
+    "K. J. Åström, K. Furuta, 'Swinging Up a Pendulum by Energy Control', *Automatica* 36(2), 278-285 (2000), doi:10.1016/S0005-1098(99)00140-5 — energy-based swing-up and the hand-over to a balancing controller.",
+])

@@ -11,7 +11,7 @@ from scipy.integrate import solve_ivp
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar, pole_table
+from dp_ui import param_sidebar, pole_table, references
 
 st.title("Mathematical background")
 params = param_sidebar()
@@ -214,3 +214,10 @@ exponentially, and once it reaches a few tens of degrees the nonlinear terms
 ($\sin\theta$, $\cos\theta$, centrifugal coupling) take over and the pendulum
 falls. The next page studies this small-perturbation regime in detail.
 """)
+
+references([
+    "H. Goldstein, C. P. Poole, J. L. Safko, *Classical Mechanics*, 3rd ed., Addison-Wesley, 2002 — the Lagrangian formulation, the Euler-Lagrange equations and small-oscillation theory used on this page.",
+    "T. Shinbrot, C. Grebogi, J. Wisdom, J. A. Yorke, 'Chaos in a Double Pendulum', *American Journal of Physics* 60(6), 491-499 (1992), doi:10.1119/1.16860 — the double pendulum as the canonical nonlinear model.",
+    "B. Levien, S. M. Tan, 'Double Pendulum: An Experiment in Chaos', *American Journal of Physics* 61(11), 1038 (1993) — an experimental companion to the model.",
+    "K. J. Åström, R. M. Murray, *Feedback Systems: An Introduction for Scientists and Engineers*, Princeton University Press, 2008 — linearization about an equilibrium and eigenvalue analysis of the linearized model.",
+])

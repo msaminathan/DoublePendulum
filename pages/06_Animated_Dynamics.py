@@ -11,7 +11,7 @@ import streamlit as st
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar
+from dp_ui import param_sidebar, references
 
 st.title("Animated dynamics")
 params = param_sidebar()
@@ -172,3 +172,10 @@ The dotted vertical line marks the snapshot time chosen with the slider. The
 animation and the traces come from the same integration, so the moving picture
 and the curves always agree.
 """)
+
+references([
+    "T. Shinbrot, C. Grebogi, J. Wisdom, J. A. Yorke, 'Chaos in a Double Pendulum', *American Journal of Physics* 60(6), 491-499 (1992), doi:10.1119/1.16860 — the chaotic motion seen in the free-fall scenario.",
+    "K. J. Åström, K. Furuta, 'Swinging Up a Pendulum by Energy Control', *Automatica* 36(2), 278-285 (2000), doi:10.1016/S0005-1098(99)00140-5 — energy-based pumping of the swing.",
+    "M. W. Spong, 'The Swing Up Control Problem for the Acrobot', *IEEE Control Systems Magazine* 15(1), 49-55 (1995), doi:10.1109/37.341864 — swing-up of underactuated two-link systems.",
+    "S. H. Strogatz, *Nonlinear Dynamics and Chaos*, 2nd ed., Westview Press, 2015 — the qualitative behaviour of the trajectories shown here.",
+])

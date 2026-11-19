@@ -49,3 +49,9 @@ def metric_row(cols, items):
     """Render a row of metrics; items = list of (label, value)."""
     for col, (label, value) in zip(cols, items):
         col.metric(label, value)
+
+
+def references(items: list[str]) -> None:
+    """Render a numbered 'References' section from a list of citation strings."""
+    body = "\n".join(f"{i}. {txt}" for i, txt in enumerate(items, 1))
+    st.markdown(f"## References\n\n{body}")

@@ -12,7 +12,7 @@ import streamlit as st
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar
+from dp_ui import param_sidebar, references
 
 st.title("Nonlinear simulation")
 params = param_sidebar()
@@ -153,3 +153,10 @@ if show_gif:
     with st.spinner("Rendering animation..."):
         gif = _gif(astuple(params), tuple(state0), t_end, force, 120)
     st.image(gif, caption="Animation of the simulated motion")
+
+references([
+    "T. Shinbrot, C. Grebogi, J. Wisdom, J. A. Yorke, 'Chaos in a Double Pendulum', *American Journal of Physics* 60(6), 491-499 (1992), doi:10.1119/1.16860 — sensitive dependence on initial conditions in the double pendulum.",
+    "B. Levien, S. M. Tan, 'Double Pendulum: An Experiment in Chaos', *American Journal of Physics* 61(11), 1038 (1993) — the same effect observed experimentally.",
+    "S. H. Strogatz, *Nonlinear Dynamics and Chaos*, 2nd ed., Westview Press, 2015 — chaos and the divergence of nearby trajectories.",
+    "E. Hairer, S. P. Nørsett, G. Wanner, *Solving Ordinary Differential Equations I: Nonstiff Problems*, 2nd revised ed., Springer, 1993 — the Runge-Kutta methods behind the numerical integration used here.",
+])

@@ -14,7 +14,7 @@ from scipy.integrate import solve_ivp
 
 import dp_model as dp
 import dp_plot as dpp
-from dp_ui import param_sidebar, pole_table
+from dp_ui import param_sidebar, pole_table, references
 
 
 @st.cache_data(show_spinner=False)
@@ -212,3 +212,10 @@ drift over the simulation is
     a.set_title("Energy of the free nonlinear plant")
     a.legend(fontsize=8)
     st.pyplot(fig)
+
+references([
+    "K. J. Åström, R. M. Murray, *Feedback Systems: An Introduction for Scientists and Engineers*, Princeton University Press, 2008 — linearization, eigenvalues and the free response of a state-space model.",
+    "Lord Rayleigh, *The Theory of Sound*, 1st ed., Macmillan, 1877 (2nd ed. 1894; Dover reprint) — normal modes and the modal decomposition of coupled oscillators.",
+    "S. H. Strogatz, *Nonlinear Dynamics and Chaos*, 2nd ed., Westview Press, 2015 — phase portraits and the stability of equilibria, including exponential growth away from an unstable equilibrium.",
+    "H. Goldstein, C. P. Poole, J. L. Safko, *Classical Mechanics*, 3rd ed., Addison-Wesley, 2002 — small-oscillation theory and the linearized equations of motion.",
+])
