@@ -26,5 +26,11 @@ pages = [
             title="Animated Dynamics", icon="🎬"),
 ]
 
-nav = st.navigation(pages, position="sidebar")
+# App title above the page list. Streamlit's built-in sidebar navigation
+# cannot show a heading above itself, so the list is drawn explicitly.
+st.sidebar.title("Inverted Double Pendulum on a Cart")
+for page in pages:
+    st.sidebar.page_link(page, label=page.title, icon=page.icon)
+
+nav = st.navigation(pages, position="hidden")
 nav.run()
